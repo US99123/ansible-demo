@@ -1,0 +1,11 @@
+---
+- name: Play to demonstrate vars prompt feature
+  hosts: cos1.example.com
+  gather_facts: no
+  become: true
+  vars_prompt:
+     - name: username
+       prompt: "Enter username:"
+  tasks:
+     - debug:
+         msg: "nm entrd is {{username}}"

@@ -1,0 +1,7 @@
+---
+- name: Play to perform delegation
+  hosts: web-server  
+  tasks:
+   - name: Get the hostname of managed host
+     command: hostname
+     register: manangedhost_output
