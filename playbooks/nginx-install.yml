@@ -1,0 +1,11 @@
+---
+- hosts: 192.168.56.11 
+  tasks:
+    - name: ensure nginx is at the latest version
+      yum: name=nginx state=latest
+      become: yes
+   
+    - name: restart nginx
+      service: name=nginx state=restarted
+      become: true
+      become_method: sudo
